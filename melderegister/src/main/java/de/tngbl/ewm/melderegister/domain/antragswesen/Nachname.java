@@ -1,4 +1,4 @@
-package de.tngbl.ewm.melderegister.domain;
+package de.tngbl.ewm.melderegister.domain.antragswesen;
 
 /**
  * Dieses Value Object beschreibt den Nachnamen einer Person.

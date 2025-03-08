@@ -1,8 +1,8 @@
 package de.tngbl.ewm.melderegister.application;
 
-import de.tngbl.ewm.melderegister.domain.AnmeldungAntrag;
-import de.tngbl.ewm.melderegister.domain.AntragRepository;
-import de.tngbl.ewm.melderegister.domain.Antragsnummer;
+import de.tngbl.ewm.melderegister.domain.antragswesen.AnmeldungAntrag;
+import de.tngbl.ewm.melderegister.domain.antragswesen.AntragRepository;
+import de.tngbl.ewm.melderegister.domain.antragswesen.Antragsnummer;
 
 import java.util.Map;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package de.tngbl.ewm.melderegister.domain;
+package de.tngbl.ewm.melderegister.domain.antragswesen;
 
 /**
  * Repository für Anträge aller Art

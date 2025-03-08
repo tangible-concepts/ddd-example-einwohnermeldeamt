@@ -1,4 +1,4 @@
-package de.tngbl.ewm.melderegister.domain;
+package de.tngbl.ewm.melderegister.domain.antragswesen;
 
 /**
  * Aggregate Root (Entity) des Aggregate "Antrag auf Anmeldung einer Person".

@@ -1,14 +1,14 @@
 package de.tngbl.ewm.melderegister.application;
 
 
-import de.tngbl.ewm.melderegister.domain.AntragFactory;
-import de.tngbl.ewm.melderegister.domain.AntragRepository;
+import de.tngbl.ewm.melderegister.domain.antragswesen.AntragFactory;
+import de.tngbl.ewm.melderegister.domain.antragswesen.AntragRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AnmeldungBeantragenTest {
 
@@ -25,6 +25,21 @@ class AnmeldungBeantragenTest {
 
         // then
         assertFalse(antragsnummer.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Fehlerhafte Daten")
+    void shouldRaiseException() {
+
+        // given
+        AntragRepository antragRepository = new LoggingAntragRepositoryFake();
+        AnmeldungBeantragen anmeldungBeantragen = new AnmeldungBeantragen(new AntragFactory(antragRepository));
+
+        // when
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->  anmeldungBeantragen.antragStellen("Max", "Mustermann", "Musterstraße", "1", "Musterstadt", "12345", LocalDate.of(2032, 1, 1), "1234567890"));
+
+        // then
+        assertTrue(ex.getLocalizedMessage().contains("Zukunft"));
     }
 
 }
