@@ -1,4 +1,4 @@
-package de.tngbl.ewm.melderegister.domain.antragswesen;
+package de.tngbl.ewm.domain.antragswesen;
 
 import java.util.UUID;
 

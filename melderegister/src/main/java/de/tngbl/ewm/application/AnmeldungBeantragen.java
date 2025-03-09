@@ -1,8 +1,8 @@
-package de.tngbl.ewm.melderegister.application;
+package de.tngbl.ewm.application;
 
-import de.tngbl.ewm.melderegister.domain.antragswesen.AnmeldungAntrag;
-import de.tngbl.ewm.melderegister.domain.antragswesen.AntragFactory;
-import de.tngbl.ewm.melderegister.domain.antragswesen.Antragsnummer;
+import de.tngbl.ewm.domain.antragswesen.AnmeldungAntrag;
+import de.tngbl.ewm.domain.antragswesen.AntragFactory;
+import de.tngbl.ewm.domain.antragswesen.Antragsnummer;
 
 import java.time.LocalDate;
 

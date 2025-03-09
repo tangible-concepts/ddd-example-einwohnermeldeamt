@@ -1,4 +1,6 @@
-package de.tngbl.ewm.melderegister.domain.antragswesen;
+package de.tngbl.ewm.domain.antragswesen;
+
+import de.tngbl.ewm.domain.basisdaten.Person;
 
 /**
  * Aggregate Root (Entity) des Aggregate "Antrag auf Anmeldung einer Person".
@@ -17,7 +19,6 @@ public class AnmeldungAntrag {
     }
 
     public Antragsnummer einreichen() {
-
         repository.create(this);
         return this.antragsnummer;
     }

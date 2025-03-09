@@ -1,8 +1,9 @@
-package de.tngbl.ewm.melderegister.application;
+package de.tngbl.ewm.application;
 
 
-import de.tngbl.ewm.melderegister.domain.antragswesen.AntragFactory;
-import de.tngbl.ewm.melderegister.domain.antragswesen.AntragRepository;
+import de.tngbl.ewm.LoggingAntragRepositoryFake;
+import de.tngbl.ewm.domain.antragswesen.AntragFactory;
+import de.tngbl.ewm.domain.antragswesen.AntragRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +29,7 @@ class AnmeldungBeantragenTest {
     }
 
     @Test
-    @DisplayName("Fehlerhafte Daten")
+    @DisplayName("Geburtsdatum in der Zukunft wird abgelehnt")
     void shouldRaiseException() {
 
         // given
