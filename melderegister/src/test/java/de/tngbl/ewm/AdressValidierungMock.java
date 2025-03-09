@@ -4,7 +4,7 @@ import de.tngbl.ewm.domain.melderegister.AdressValidierung;
 import de.tngbl.ewm.domain.melderegister.Meldeadresse;
 
 /**
- * Simulidert die Anbindung eines externen Dienstes zur Adressvalidierung.
+ * Simuliert die Anbindung eines externen Dienstes zur Adressvalidierung.
  *
  */
 public class AdressValidierungMock implements AdressValidierung {
