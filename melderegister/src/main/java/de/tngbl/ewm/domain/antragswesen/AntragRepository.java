@@ -1,7 +1,7 @@
 package de.tngbl.ewm.domain.antragswesen;
 
 /**
- * Repository für Anträge aller Art.
+ * Repository für Anträge.
  * Abstrahiert die Datenbankzugriffe auf Anträge.
  */
 public interface AntragRepository {

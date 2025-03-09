@@ -6,13 +6,22 @@ kommunales Einwohnermeldeamt. Es dient als Anschauungsobjekt um Konzepte des DDD
 Die Beispielimplementierung enthält bewusst einige Lücken und Unschärfen, um eine inhaltliche Auseinandersetzung 
 mit den gewählten Ansätzen zu ermöglichen. Sie erhebt nicht den Anspruch einer Musterlösung. 
 
-Das Domain Model reflektiert eine in Deutshc formulierte Ubiquitous Language.
+Das Domain Model reflektiert eine in Deutsch formulierte Ubiquitous Language.
 
 ## Fragestellungen
 
 ### Ereiterbarkeit
 
-1. Wie können neue Anwendungsfälle hinzugefügt werden?
+1. Wie können neue Anwendungsfälle (Ummeldung, Abmeldung) hinzugefügt werden?
+
+### Testbarkeit
+
+### Wartbarkeit
+1. Wie könnte der Bounded Context weiter aufgespalten werden? Welche 'Bruchkanten' sind erkennbar?
+
+### Robustheit
+1. Wie könnte die Anwendung von der Einführung einer zentralen Fehlerbehandlung (z.B. Exception Fassaden) profitieren?
+   1. Welche Fehler sollten innerhalb, welche außerhalb des Domain Models behandelt werden? Warum? Welche Trade Offs existieren?
 
 ### Implementierung
 
@@ -21,3 +30,6 @@ Das Domain Model reflektiert eine in Deutshc formulierte Ubiquitous Language.
    3. Ergeben sich daraus Trade-Offs?
 
 ### Fachliche Konzepte
+1. Wie könnten fachliche Fehler (z. B. Ablehnung ungültiger Adressen) von technischen (NULL-Referenzen) getrennt werden?
+   1. Welche Begriffe sollten Teil der Ubiquitous Language sein / werden?
+   2. Wie könnte die Fehlerbehandlung verbessert werden?
