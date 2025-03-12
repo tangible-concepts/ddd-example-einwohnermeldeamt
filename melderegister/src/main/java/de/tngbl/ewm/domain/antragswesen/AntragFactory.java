@@ -9,12 +9,6 @@ import java.time.LocalDate;
  */
 public class AntragFactory {
 
-    private final AntragRepository repository;
-
-    public AntragFactory(AntragRepository repository) {
-        this.repository = repository;
-    }
-
     /**
      * Factory-Methode um aus primitiven Eingabedaten einen vollständigen Antrag zu erzeugen
      */
@@ -29,6 +23,6 @@ public class AntragFactory {
         Geburtsdatum g = new Geburtsdatum(geburtsdatum);
         Personalausweisnummer pa = new Personalausweisnummer(personalausweisnummer);
         Person person = new Person(v, n, a, g, pa);
-        return new AnmeldungAntrag(repository, person);
+        return new AnmeldungAntrag(person);
     }
 }

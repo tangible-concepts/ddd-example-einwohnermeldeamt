@@ -44,4 +44,14 @@ public class RegisterEintrag {
     public void setEintragungsZeitpunkt(LocalDateTime eintragungsZeitpunkt) {
         this.eintragungsZeitpunkt = eintragungsZeitpunkt;
     }
+
+    @Override
+    public String toString() {
+        return "RegisterEintrag{" +
+                "registereintragNummer=" + registereintragNummer +
+                ", gemeldetePerson=" + gemeldetePerson +
+                ", meldeadresse=" + meldeadresse +
+                ", eintragungsZeitpunkt=" + eintragungsZeitpunkt +
+                '}';
+    }
 }

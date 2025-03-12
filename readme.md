@@ -17,9 +17,16 @@ Das Domain Model reflektiert eine in Deutsch formulierte Ubiquitous Language.
 ### Testbarkeit
 
 ### Wartbarkeit
+
 1. Wie könnte der Bounded Context weiter aufgespalten werden? Welche 'Bruchkanten' sind erkennbar?
 
+### Lesbarkeit
+
+1. Das Domain Model ist auf Deutsch gehalten. Welche Vor- und Nachteile sind (subjektiv) damit verbunden?
+2. Manche Begriffe sind dennoch in Englisch (Event, Repository, publish()). Was ist deren Gemeinsamkeit?
+
 ### Robustheit
+
 1. Wie könnte die Anwendung von der Einführung einer zentralen Fehlerbehandlung (z.B. Exception Fassaden) profitieren?
    1. Welche Fehler sollten innerhalb, welche außerhalb des Domain Models behandelt werden? Warum? Welche Trade Offs existieren?
 
@@ -30,6 +37,7 @@ Das Domain Model reflektiert eine in Deutsch formulierte Ubiquitous Language.
    3. Ergeben sich daraus Trade-Offs?
 
 ### Fachliche Konzepte
+
 1. Wie könnten fachliche Fehler (z. B. Ablehnung ungültiger Adressen) von technischen (NULL-Referenzen) getrennt werden?
    1. Welche Begriffe sollten Teil der Ubiquitous Language sein / werden?
    2. Wie könnte die Fehlerbehandlung verbessert werden?

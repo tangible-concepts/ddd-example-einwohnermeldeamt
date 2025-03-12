@@ -18,8 +18,8 @@ class AnmeldungBeantragenTest {
     void shouldCreateAnmeldung() {
 
         // given
-        AntragRepository antragRepository = new LoggingAntragRepositoryFake();
-        AnmeldungBeantragen anmeldungBeantragen = new AnmeldungBeantragen(new AntragFactory(antragRepository));
+        AntragRepository antragRepository = LoggingAntragRepositoryFake.getInstance();
+        AnmeldungBeantragen anmeldungBeantragen = new AnmeldungBeantragen(new AntragFactory());
 
         // when
         String antragsnummer = anmeldungBeantragen.antragStellen("Max", "Mustermann", "Musterstraße", "1", "Musterstadt", "12345", LocalDate.of(2000, 1, 1), "1234567890");
@@ -33,8 +33,8 @@ class AnmeldungBeantragenTest {
     void shouldRaiseException() {
 
         // given
-        AntragRepository antragRepository = new LoggingAntragRepositoryFake();
-        AnmeldungBeantragen anmeldungBeantragen = new AnmeldungBeantragen(new AntragFactory(antragRepository));
+        AntragRepository antragRepository = LoggingAntragRepositoryFake.getInstance();
+        AnmeldungBeantragen anmeldungBeantragen = new AnmeldungBeantragen(new AntragFactory());
 
         // when
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->  anmeldungBeantragen.antragStellen("Max", "Mustermann", "Musterstraße", "1", "Musterstadt", "12345", LocalDate.of(2032, 1, 1), "1234567890"));

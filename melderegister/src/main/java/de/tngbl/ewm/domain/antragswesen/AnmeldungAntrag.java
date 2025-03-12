@@ -1,6 +1,7 @@
 package de.tngbl.ewm.domain.antragswesen;
 
 import de.tngbl.ewm.domain.basisdaten.Person;
+import de.tngbl.ewm.domain.eventbus.EventBus;
 
 /**
  * Aggregate Root (Entity) des Aggregate "Antrag auf Anmeldung einer Person".
@@ -8,18 +9,15 @@ import de.tngbl.ewm.domain.basisdaten.Person;
  */
 public class AnmeldungAntrag {
 
-    private final AntragRepository repository;
-
     private Antragsnummer antragsnummer = null;
     private final Person person;
 
-    public AnmeldungAntrag(AntragRepository repository, Person person) {
-        this.repository = repository;
+    public AnmeldungAntrag(Person person) {
         this.person = person;
     }
 
     public Antragsnummer einreichen() {
-        repository.create(this);
+        EventBus.publish(new AntragEingereichtEvent(this));
         return this.antragsnummer;
     }
 

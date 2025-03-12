@@ -23,14 +23,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AnmeldungsantragVerarbeitenTest {
 
-    AntragRepository antragRepository = new LoggingAntragRepositoryFake();  //
+    AntragRepository antragRepository = LoggingAntragRepositoryFake.getInstance();  //
     private AnmeldungAntrag anmeldungAntrag;    // Testobjekt
 
     @BeforeAll
     void setUpFakePersistence() {
 
-
-        AnmeldungAntrag anmeldungAntrag = new AnmeldungAntrag(antragRepository, new Person(
+        AnmeldungAntrag anmeldungAntrag = new AnmeldungAntrag(new Person(
                 new Vorname("Max"),
                 new Nachname("Mustermann"),
                 new Adresse(
@@ -97,7 +96,7 @@ public class AnmeldungsantragVerarbeitenTest {
                 new Geburtsdatum(LocalDate.now().minusYears(20)),
                 new Personalausweisnummer("1234567899") // triggert Ablehnung in Mock
         );
-        var anmeldungInvalidPerson = new AnmeldungAntrag(antragRepository, invalidPerson).einreichen();
+        var anmeldungInvalidPerson = new AnmeldungAntrag(invalidPerson).einreichen();
 
         // when
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> anmeldungVerarbeiten.verarbeiten(anmeldungInvalidPerson.value().toString()));
@@ -125,7 +124,7 @@ public class AnmeldungsantragVerarbeitenTest {
                 new Geburtsdatum(LocalDate.now().minusYears(20)),
                 new Personalausweisnummer("1234567890")
         );
-        var anmeldungInvalidAddress = new AnmeldungAntrag(antragRepository, invalidAddress).einreichen();
+        var anmeldungInvalidAddress = new AnmeldungAntrag(invalidAddress).einreichen();
 
 
         // when
