@@ -4,6 +4,8 @@ package de.tngbl.ewm.application;
 import de.tngbl.ewm.LoggingAntragRepositoryFake;
 import de.tngbl.ewm.domain.antragswesen.AntragFactory;
 import de.tngbl.ewm.domain.antragswesen.AntragRepository;
+import de.tngbl.ewm.integration.eventing.LoggingEventPublisher;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +14,11 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AnmeldungBeantragenTest {
+
+    @BeforeAll
+    static void setUpEventPublisher() {
+        new LoggingEventPublisher();
+    }
 
     @Test
     @DisplayName("Happy Path")

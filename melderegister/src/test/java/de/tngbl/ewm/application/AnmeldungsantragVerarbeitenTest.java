@@ -9,6 +9,7 @@ import de.tngbl.ewm.domain.antragswesen.AntragRepository;
 import de.tngbl.ewm.domain.antragswesen.Antragsnummer;
 import de.tngbl.ewm.domain.basisdaten.*;
 import de.tngbl.ewm.domain.melderegister.Antragsverarbeitung;
+import de.tngbl.ewm.integration.eventing.LoggingEventPublisher;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,8 @@ public class AnmeldungsantragVerarbeitenTest {
 
         antragRepository.create(anmeldungAntrag);
         this.anmeldungAntrag = anmeldungAntrag;
+
+        new LoggingEventPublisher();
     }
 
     @Test

@@ -16,6 +16,9 @@ Das Domain Model reflektiert eine in Deutsch formulierte Ubiquitous Language.
 
 ### Testbarkeit
 
+1. Wie wirkt sich die isolierte Testbarkeit der Domänenlogik auf die Testbarkeit der Anwendung aus?
+2. Welche Tests werden sinnvollerweise auf Ebene des Domain Models, welche auf Ebene der Application Services geschrieben?
+
 ### Wartbarkeit
 
 1. Wie könnte der Bounded Context weiter aufgespalten werden? Welche 'Bruchkanten' sind erkennbar?
@@ -34,7 +37,16 @@ Das Domain Model reflektiert eine in Deutsch formulierte Ubiquitous Language.
 
 1. Welche Implikationen bringt die Abbildung der Aspekte Instanzbildung, Eventing und Validierung durch ein Framework (Spring, Quarkus, ...) mit sich?
 2. Wie beeinflusst die in Deutsch gehaltene Ubiquitous Language die Implementierung? 
-   3. Ergeben sich daraus Trade-Offs?
+   1. Ergeben sich daraus Trade-Offs?
+3. Wie würde eine Spring-Implementierung aussehen? Welche Vor- und Nachteile ergeben sich daraus?
+   1. Instanzbildung (Dependency Injection)
+   2. Validierung (Bean Validation)
+   3. Eventing (Application Events)
+   4. Fehlerbehandlung (Exception Handling via AOP / Interceptors / ...)
+   5. Transaktionen (Declarative Transaction Management)
+4. Event-basierte Kommunikation entkoppelt die Bausteine voneinander.
+   1. Welche Vorteile bietet das im Vergleich zum direkten Aufruf am Beispiel des Aggregates 'AnmeldungAntrag'?
+   2. Welche Nachteile ergeben sich daraus, z.b. beim Debugging? 
 
 ### Fachliche Konzepte
 
