@@ -5,7 +5,8 @@ import de.tngbl.ewm.domain.antragswesen.AntragRepository;
 import de.tngbl.ewm.domain.antragswesen.Antragsnummer;
 
 /**
- * Dieser Domain Service bildet die fachliche Verarbeitung von Anträgen ab.
+ * Dieser Domain Service bildet den Prozess der fachlichen Verarbeitung
+ * von Anträgen ab.
  */
 public class Antragsverarbeitung {
 
